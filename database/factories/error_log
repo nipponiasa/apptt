@@ -1,0 +1,44 @@
+[07-Sep-2020 08:26:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[12-Sep-2020 14:39:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[23-Jun-2021 14:27:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[23-Jun-2021 17:04:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[23-Jun-2021 23:48:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[24-Jun-2021 04:45:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[24-Jun-2021 11:47:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[24-Jun-2021 16:47:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[07-Jul-2021 00:20:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[22-Jul-2021 00:12:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20
+[23-Jul-2021 03:57:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/database/factories/UserFactory.php on line 20

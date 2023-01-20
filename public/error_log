@@ -1,0 +1,340 @@
+[27-Aug-2020 19:16:42 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/rtjjjjmy/public_html/apptt/bootstrap/app.php:14
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/public/index.php(38): require_once()
+#1 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/bootstrap/app.php on line 14
+[27-Aug-2020 19:16:48 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/rtjjjjmy/public_html/apptt/bootstrap/app.php:14
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/public/index.php(38): require_once()
+#1 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/bootstrap/app.php on line 14
+[27-Aug-2020 19:16:53 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/rtjjjjmy/public_html/apptt/bootstrap/app.php:14
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/public/index.php(38): require_once()
+#1 {main}
+  thrown in /home/rtjjjjmy/public_html/apptt/bootstrap/app.php on line 14
+[02-Sep-2020 11:46:30 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:258
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(425): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(402): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(313): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(210): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Compone in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 258
+[02-Sep-2020 11:46:37 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:258
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(425): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(402): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(313): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(210): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Compone in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 258
+[02-Sep-2020 11:46:55 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:258
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(425): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(402): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(313): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(210): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Compone in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 258
+[09-Jul-2021 14:30:51 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/rtjjjjmy/public_html/apptt/vendor/ramsey/uuid/src/functions.php on line 34
+[09-Jul-2021 14:30:54 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/rtjjjjmy/public_html/apptt/vendor/ramsey/uuid/src/functions.php on line 34
+[09-Jul-2021 14:30:59 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/rtjjjjmy/public_html/apptt/vendor/ramsey/uuid/src/functions.php on line 34
+[09-Jul-2021 14:31:04 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/rtjjjjmy/public_html/apptt/vendor/ramsey/uuid/src/functions.php on line 34
+[09-Jul-2021 14:31:11 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/rtjjjjmy/public_html/apptt/vendor/ramsey/uuid/src/functions.php on line 34
+[09-Jul-2021 14:31:26 UTC] PHP Parse error:  syntax error, unexpected '?', expecting variable (T_VARIABLE) in /home/rtjjjjmy/public_html/apptt/vendor/ramsey/uuid/src/functions.php on line 34
+[28-Jul-2021 09:34:07 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[28-Jul-2021 09:34:07 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 512000 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php on line 142
+[28-Jul-2021 09:35:03 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[28-Jul-2021 09:35:03 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 512000 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php on line 142
+[28-Jul-2021 09:35:14 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[28-Jul-2021 09:35:14 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 512000 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php on line 142
+[28-Jul-2021 09:35:44 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[28-Jul-2021 09:35:44 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 512000 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php on line 142
+[28-Jul-2021 13:24:20 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[28-Jul-2021 13:24:20 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 512000 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/facade/ignition/src/ErrorPage/ErrorPageViewModel.php on line 142
+[28-Jul-2021 13:26:39 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[28-Jul-2021 13:26:43 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[28-Jul-2021 13:26:43 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 32768 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/symfony/error-handler/Error/FatalError.php on line 1
+[28-Jul-2021 13:26:48 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[28-Jul-2021 13:26:53 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[28-Jul-2021 13:26:53 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 32768 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/symfony/error-handler/Error/FatalError.php on line 1
+[28-Jul-2021 16:24:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[28-Jul-2021 16:24:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[28-Jul-2021 17:34:27 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[28-Jul-2021 17:34:27 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[28-Jul-2021 17:34:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[28-Jul-2021 17:34:38 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:12:22 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:34 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:38 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:39 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:44 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:44 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:45 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:45 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:46 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:55 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:13:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:14:01 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:14:07 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:14:19 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:14:44 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:15:51 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:15:53 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:16:18 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:16:20 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:16:22 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:16:24 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:16:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:16:42 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:17:16 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:17:20 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[29-Jul-2021 07:17:20 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/composer/ClassLoader.php on line 444
+[29-Jul-2021 07:17:28 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:17:32 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[29-Jul-2021 07:17:32 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/composer/ClassLoader.php on line 444
+[29-Jul-2021 07:18:27 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 07:18:29 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:53:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:53:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:53:59 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:53:59 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:54:00 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:54:00 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:54:01 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:54:04 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:55:51 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:55:53 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:56:03 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:56:04 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:58:38 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:58:39 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:58:53 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:58:54 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:59:09 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:59:11 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:59:29 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 10:59:30 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:13 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:15 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:18 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:19 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:36 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:49 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:00:51 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:03:38 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:03:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:05:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:05:41 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:05:50 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:05:52 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:06:10 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:06:11 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:06:16 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:06:17 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:07:33 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:07:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:15:43 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:15:44 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:15:44 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:15:45 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:15:47 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:15:49 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:16:07 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:16:10 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:16:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:16:57 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:30:58 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:30:58 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:30:59 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:30:59 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:35:54 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:35:55 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:35:59 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:36:01 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:36:02 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:36:04 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:36:18 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:36:20 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:36:41 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:36:42 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:37:26 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:37:27 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:37:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:37:42 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:38:29 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:38:31 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:39:07 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:39:08 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:39:50 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:39:51 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:39:57 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 11:39:59 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:33 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:34 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:34 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:38 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:43 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:44 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:48 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:09:50 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:32:12 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:32:14 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:32:16 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:32:18 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:32:21 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:32:23 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:33:41 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:33:43 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:39:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 12:39:39 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:19:28 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:19:29 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:19:46 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:19:46 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:19:50 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[29-Jul-2021 14:19:50 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/composer/ClassLoader.php on line 444
+[29-Jul-2021 14:20:08 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:09 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:09 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:10 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:12 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:14 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:22 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:24 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:20:57 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:21:51 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 14:21:52 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:21:17 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:21:18 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:21:18 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:21:19 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:23 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:23 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:29 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:30 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:31 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:31 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:41 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:42 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:42 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:43 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:46:54 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:47:00 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:47:02 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:47:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:47:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:48:03 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:48:04 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:48:33 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 20:48:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[29-Jul-2021 22:02:19 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:33 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:34 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:41 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:42 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:47 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:47:48 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:49:13 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:02 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:10 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:11 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:18 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:19 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:33 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:33 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:36 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 07:50:58 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:13:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:13:37 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:13:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:13:37 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:13:39 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:13:39 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:05 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:05 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:05 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:05 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:19 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:19 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:19 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:19 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:20 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:20 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:32 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:32 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:34 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:34 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:44 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:44 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:14:45 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:14:45 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:18:50 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:18:51 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:18:51 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:18:51 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:18:53 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:18:53 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:19:01 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:19:01 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:19:03 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:19:03 UTC] PHP Warning:  Use of undefined constant register - assumed 'register' (this will throw an Error in a future version of PHP) in /home/rtjjjjmy/public_html/apptt/config/adminlte.php on line 393
+[30-Jul-2021 08:21:30 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:21:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:21:41 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:21:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:21:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:22:07 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:22:08 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:22:42 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:22:47 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/darkaonline/ripcord/src/Ripcord/Client/Client.php on line 193
+[30-Jul-2021 08:22:47 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 32768 bytes) in /home/rtjjjjmy/public_html/apptt/vendor/symfony/error-handler/Error/FatalError.php on line 1
+[30-Jul-2021 08:22:50 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:22:52 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:24:31 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:24:32 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:24:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:24:38 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:24:40 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:25:21 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:25:23 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:25:56 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:25:58 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:28:59 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:28:59 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:258
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(425): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(402): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(313): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(210): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Compone in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 258
+[30-Jul-2021 08:29:01 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:01 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:258
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(425): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(402): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(313): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(210): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Compone in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 258
+[30-Jul-2021 08:29:04 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:04 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:258
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(425): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(402): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(313): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(210): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Compone in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 258
+[30-Jul-2021 08:29:08 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:08 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:258
+Stack trace:
+#0 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(425): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(402): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(313): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(210): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Compone in /home/rtjjjjmy/public_html/apptt/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 258
+[30-Jul-2021 08:29:25 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:26 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:31 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:33 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:35 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0
+[30-Jul-2021 08:29:37 UTC] PHP Deprecated:  Directive 'allow_url_include' is deprecated in Unknown on line 0

@@ -1,0 +1,6 @@
+[09-Sep-2020 21:42:47 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/rtjjjjmy/public_html/apptt/app/Exceptions/Handler.php on line 8
+[12-Sep-2020 14:37:14 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/rtjjjjmy/public_html/apptt/app/Exceptions/Handler.php on line 8
+[23-Jun-2021 17:02:16 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/rtjjjjmy/public_html/apptt/app/Exceptions/Handler.php on line 8
+[07-Jul-2021 00:17:58 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/rtjjjjmy/public_html/apptt/app/Exceptions/Handler.php on line 8
+[22-Jul-2021 00:09:58 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/rtjjjjmy/public_html/apptt/app/Exceptions/Handler.php on line 8
+[23-Jul-2021 02:41:20 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/rtjjjjmy/public_html/apptt/app/Exceptions/Handler.php on line 8

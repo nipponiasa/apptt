@@ -1,0 +1,6 @@
+[07-Sep-2020 08:15:50 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Console\Kernel' not found in /home/rtjjjjmy/public_html/apptt/app/Console/Kernel.php on line 8
+[12-Sep-2020 14:37:13 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Console\Kernel' not found in /home/rtjjjjmy/public_html/apptt/app/Console/Kernel.php on line 8
+[23-Jun-2021 17:02:15 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Console\Kernel' not found in /home/rtjjjjmy/public_html/apptt/app/Console/Kernel.php on line 8
+[07-Jul-2021 00:17:58 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Console\Kernel' not found in /home/rtjjjjmy/public_html/apptt/app/Console/Kernel.php on line 8
+[22-Jul-2021 00:09:57 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Console\Kernel' not found in /home/rtjjjjmy/public_html/apptt/app/Console/Kernel.php on line 8
+[23-Jul-2021 01:46:30 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Console\Kernel' not found in /home/rtjjjjmy/public_html/apptt/app/Console/Kernel.php on line 8

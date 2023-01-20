@@ -1,0 +1,515 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Ripcord\Ripcord;
+use PhpXmlRpc\Client;
+class OdooController extends Controller
+{
+ //production
+    const URL ='https://alpiek-oisterwijk-traden-and-traffic-modules.odoo.com';
+    const DB ='alpiek-oisterwijk-traden-and-traffic-modules-13-0-874478';
+//production
+
+    //test
+    //const URL ="https://testodoo.trade-traffic.com"; 
+    //const DB = "alpiek-oisterwijk-traden-and-traffic-modules-13-0-te-1303822";
+    //test
+
+
+    
+    //functions used in this controler
+   //..........................................................................
+   function searchmodelname($ftable, $modelname) {
+    $size = count($ftable);
+    $thesi = -1;
+    for($i = 0; $i < $size; $i++)
+            {
+                if ($ftable[$i]["name"]==$modelname) :
+                    $thesi = $i;
+                    break;
+                endif;
+            }
+    return $thesi;
+    }
+    //..........................................................................
+
+
+
+
+    public function fetch_current_stock()
+        {
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+         
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+            $query_arguments=array('&','&',array('tracking', '=', 'serial'),array(['location_id'][0],'!=',5),array(['location_id'][0],'!=',4),array(['location_id'][0],'!=',14)); // Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            $limitations=array('fields'=>array('location_id','inventory_quantity','quantity','reserved_quantity','product_tmpl_id')) ;// Array of wanted fields True, False
+            
+            $number_records=$models->execute_kw($db, $uid, $password, 'stock.quant', 'search_count', array($query_arguments));
+            dd( $number_records);
+           // $ids = $models->execute_kw($db, $uid, $password, 'stock.quant', 'search', array($query_arguments));
+            //2075 -> Mol
+              //2076 ->Mol Input
+              //1975->WH/Trade & Traffic Plus BV/Heerde
+             //8-> WH/Trade & Traffic Plus BV
+            // 9-> Partner Locations/Customers/Input
+           // 4-> "Partner Locations/Vendors" 
+           //5->Partner Locations/Customers poulimeno
+           //13->"Physical Locations/Trade & Traffic Plus BV: Transit Location"
+           //14->"Virtual Locations/Trade & Traffic Plus BV: Inventory adjustment"
+$iter=$number_records/100;
+$ypoloipo=fmod($number_records, 100);
+//$iter=10;
+      
+            //$number_records=$models->execute_kw($db, $uid, $password, 'stock.quant', 'search_count', array($query_arguments));
+           
+           // for ($x = 0; $x <= 10; $x++)
+           
+           // $uii=$models->execute_kw($db, $uid, $password,'stock.quant', 'search', array($query_arguments),array('offset'=>10, 'limit'=>5));
+           
+
+
+
+            //$ids = $models->execute_kw($db, $uid, $password,'res.partner', 'search', array(array(array('is_company', '=', true))));
+       // $records = $models->execute_kw($db, $uid, $password,'res.partner', 'read', array($ids));
+        // count the number of fields fetched by default
+       // count($records[0]);
+
+
+
+
+         
+           //die();
+
+
+           //$uii=$models->execute_kw($db, $uid, $password,'stock.quant', 'search_read', array($query_arguments), $limitations);//telos execute_kw
+              
+            $modelcount = array();
+
+
+
+            for ($x = 0; $x <= $iter; $x++){
+                $ids = $models->execute_kw($db, $uid, $password,'stock.quant', 'search', array($query_arguments), array('offset'=>1+$x*100, 'limit'=>100));
+                $records = $models->execute_kw($db, $uid, $password,'stock.quant', 'read', array($ids));
+               // var_dump($records);
+            var_dump($records);
+           foreach($records as $result)
+
+
+            {
+                $modelochk=$result['product_tmpl_id'][0];
+                $chkthesi=$this->searchmodelname($modelcount,$modelochk); //allivs tha epsaxne na brei mia global synarthsh
+                $currentlocation=$result['location_id'][0];
+                $reserved_v=$result['reserved_quantity'];
+                $id=$result['product_id'][0];
+            if ($reserved_v==0):
+                    if ($chkthesi==-1):
+                            if($currentlocation==8 or $currentlocation==2075):
+                                $pushtobe=['name'=>$modelochk, 'WH'=> 1,'soon'=> 0, 'nonWH'=> 0, 'reserv'=> 0, 'id'=>$id];
+                                array_push($modelcount, $pushtobe);
+                            elseif($currentlocation==9):
+                                $pushtobe=['name'=>$modelochk, 'WH'=> 0, 'soon'=> 1, 'nonWH'=> 0, 'reserv'=> 0, 'id'=>$id];	
+                                array_push($modelcount, $pushtobe);
+                            elseif($currentlocation!=4 and $currentlocation!=5 and $currentlocation!=14 and $currentlocation!=762 and $currentlocation!=13):
+                                $pushtobe=['name'=>$modelochk, 'WH'=> 0,'soon'=> 0, 'nonWH'=> 1, 'reserv'=> 0, 'id'=>$id];
+                                array_push($modelcount, $pushtobe);
+                            endif;
+                            
+                    else:
+                            if($currentlocation==8 or $currentlocation==2075):
+                                $modelcount[$chkthesi]["WH"]++;
+                        elseif($currentlocation==9):
+                                $modelcount[$chkthesi]["soon"]++;
+                            elseif($currentlocation!=4 and $currentlocation!=5 and $currentlocation!=14 and $currentlocation!=762 and $currentlocation!=13):
+                                $modelcount[$chkthesi]["nonWH"]++;
+                            endif;
+                    endif;
+            endif;
+        
+            
+            if ($reserved_v!=0):
+                    if ($chkthesi==-1):
+                            if($currentlocation==8 ):
+                                $pushtobe=['name'=>$modelochk, 'WH'=> 0,'soon'=> 0, 'nonWH'=> 0, 'reserv'=> 1, 'id'=>$id];
+                                array_push($modelcount, $pushtobe);
+                            elseif($currentlocation==9):
+                                $pushtobe=['name'=>$modelochk, 'WH'=> 0, 'soon'=> 1, 'nonWH'=> 0, 'reserv'=> 0, 'id'=>$id];	
+                                array_push($modelcount, $pushtobe);
+                            elseif($currentlocation!=4 and $currentlocation!=5 and $currentlocation!=14 and $currentlocation!=762 and $currentlocation!=13):
+                                $pushtobe=['name'=>$modelochk, 'WH'=> 0,'soon'=> 0, 'nonWH'=> 0, 'reserv'=> 1, 'id'=>$id];
+                                array_push($modelcount, $pushtobe);
+                            endif;
+                            
+                    else:
+            
+                                
+            
+                        if($currentlocation==9):
+                                $modelcount[$chkthesi]["soon"]++;
+                            else:
+                                $modelcount[$chkthesi]["reserv"]++;
+                            endif;
+            
+            
+            
+            
+                    endif;
+            endif;
+            
+                
+            }
+            
+        }
+            //return view('current_stock')->with('current_stock', $modelcount); 
+        return view('current_stock')->with('modelcount',$modelcount);
+        }
+    
+
+    
+
+
+
+
+        public function fetch_delivery_ready(){
+            //connection strings
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+            //connection strings
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+            $query_arguments=array(array('invoice_status', '=', 'to invoice'));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            //$limitations=array('fields'=>array('in_date','lot_id','location_id','tracking','inventory_quantity','quantity','reserved_quantity','product_id','product_uom_id','display_name','create_uid','product_tmpl_id')) ;
+            $uii=$models->execute_kw($db, $uid, $password, 'sale.order', 'search_read', array($query_arguments));//telos execute_kw
+            return view('delivery_ready')->with('uii',$uii);
+
+        }
+
+
+
+
+        
+        public function fetch_quotations_pending(){
+            //connection strings
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+            //test
+            $username = "vgorgolis@nipponia.com";
+            $password = "1234$#@!";
+            //connection strings
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+            $query_arguments=array(array('state', '=', 'draft'));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            //$limitations=array('fields'=>array('in_date','lot_id','location_id','tracking','inventory_quantity','quantity','reserved_quantity','product_id','product_uom_id','display_name','create_uid','product_tmpl_id')) ;
+            $uii=$models->execute_kw($db, $uid, $password, 'sale.order', 'search_read', array($query_arguments));//telos execute_kw
+            return view('quotations_pending')->with('uii',$uii);
+
+        }
+
+
+
+
+        public function fetch_speedversion_change(){
+            //connection strings
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+            //connection strings
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+            $query_arguments=array('&',array('serial_no','=',False),array('state', '=', 'sale'));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            //$limitations=array('fields'=>array('in_date','lot_id','location_id','tracking','inventory_quantity','quantity','reserved_quantity','product_id','product_uom_id','display_name','create_uid','product_tmpl_id')) ;
+            $uii=$models->execute_kw($db, $uid, $password, 'sale.order.line', 'search_read', array($query_arguments));//telos execute_kw
+            return view('speedversion_change')->with('uii',$uii);
+
+        }
+
+
+        public function fetch_simple_preparation(){
+            //connection strings
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+            //connection strings
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+            $query_arguments=array('&',array('serial_no','!=',False),array('state', '=', 'sale'));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            //$limitations=array('fields'=>array('in_date','lot_id','location_id','tracking','inventory_quantity','quantity','reserved_quantity','product_id','product_uom_id','display_name','create_uid','product_tmpl_id')) ;
+            $uii=$models->execute_kw($db, $uid, $password, 'sale.order.line', 'search_read', array($query_arguments));//telos execute_kw
+            return view('simple_preparation')->with('uii',$uii);
+
+        }
+
+
+
+
+        public function fetch_sold(){
+            //connection strings
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+            //connection strings
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+            $query_arguments=array(array(['location_id'][0],'=',5));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            //$limitations=array('fields'=>array('in_date','lot_id','location_id','tracking','inventory_quantity','quantity','reserved_quantity','product_id','product_uom_id','display_name','create_uid','product_tmpl_id')) ;
+            $uii=$models->execute_kw($db, $uid, $password, 'stock.quant', 'search_read', array($query_arguments));//telos execute_kw
+            $modelcount=array();
+            foreach($uii as $result)
+            {
+                $modelochk=$result['product_tmpl_id'][1];
+                $chkthesi=$this->searchmodelname($modelcount,$modelochk);
+                $serialne=$result['lot_id'][1];
+
+                if ($serialne!=''):
+                    if ($chkthesi==-1):
+                                $pushtobe=['name'=>$modelochk, 'sold'=> 1];
+                                array_push($modelcount, $pushtobe);
+                            
+                            
+                    else:
+                            
+                                $modelcount[$chkthesi]["sold"]++;
+                            
+                    endif;
+                endif;
+
+            }
+
+                      
+            
+            return view('sold')->with('modelcount',$modelcount);
+
+        }
+
+
+
+        public function fetch_who_reserved_what(){
+            //connection strings
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+            //connection strings
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+            $query_arguments=array(array('state', '=', 'confirmed'));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            //$limitations=array('fields'=>array('in_date','lot_id','location_id','tracking','inventory_quantity','quantity','reserved_quantity','product_id','product_uom_id','display_name','create_uid','product_tmpl_id')) ;
+            $uii=$models->execute_kw($db, $uid, $password, 'stock.move', 'search_read', array($query_arguments));
+            return view('who_reserved_what')->with('uii',$uii);
+
+        }
+
+
+
+        public function fetch_aged_consignments_model(){
+           
+                $url = self::URL; 
+                $db = self::DB;
+                $username = Config('configva.odoo.user');//einai ston config folder
+                $password = Config('configva.odoo.pass');//einai ston config folder
+             
+                $common = Ripcord::client("$url/xmlrpc/2/common");
+                $uid = $common->authenticate($db, $username, $password, array());
+                $models = Ripcord::client("$url/xmlrpc/2/object");
+                $query_arguments=array('&','&','&','&',array('location_id.usage','=','internal'),array(['location_id'][0],'!=',2075),array(['location_id'][0],'!=',2076),array(['location_id'][0],'!=',1975),array(['location_id'][0],'!=',8),array(['location_id'][0],'!=',9),array('lot_id','!=',False));
+                $limitations=array('fields'=>array('product_tmpl_id','lot_id','location_id','create_date'));  // Array of wanted fields True, False
+                $uii=$models->execute_kw($db, $uid, $password,'stock.quant', 'search_read',array($query_arguments),$limitations);
+
+                $modelcount = array();
+             
+                
+                foreach($uii as $result)
+                {
+
+                    $modeloidchk=$result['product_tmpl_id'][0];
+                    $modelochk=$result['product_tmpl_id'][1];
+                    $chkthesi=$this->searchmodelname($modelcount,$modelochk); //allivs tha epsaxne na brei mia global synarthsh
+                    $now = time();
+                    $datediff = $now - strtotime($result['create_date']);
+                    $days_in_consignment =round($datediff / (86400));  //    60*60*24=86400
+
+               
+                    if ($chkthesi==-1):
+                                if($days_in_consignment<=30):
+                                        $pushtobe=['referenceid'=>$modeloidchk,'name'=>$modelochk, 'd1_30'=> 1,'d31_60'=> 0, 'd61_90'=> 0, 'd91_120'=> 0, 'older'=>0, 'total'=>1];
+                                        array_push($modelcount, $pushtobe);
+                                    elseif($days_in_consignment>30 and $days_in_consignment<=60):
+                                        $pushtobe=['referenceid'=>$modeloidchk,'name'=>$modelochk, 'd1_30'=> 0,'d31_60'=> 1, 'd61_90'=> 0, 'd91_120'=> 0, 'older'=>0, 'total'=>1];
+                                        array_push($modelcount, $pushtobe);
+                                    elseif($days_in_consignment>60 and $days_in_consignment<=90):
+                                        $pushtobe=['referenceid'=>$modeloidchk,'name'=>$modelochk, 'd1_30'=> 0,'d31_60'=> 0, 'd61_90'=> 1, 'd91_120'=> 0, 'older'=>0, 'total'=>1];
+                                        array_push($modelcount, $pushtobe);
+                                    elseif($days_in_consignment>90 and $days_in_consignment<=120):
+                                        $pushtobe=['referenceid'=>$modeloidchk,'name'=>$modelochk, 'd1_30'=> 0,'d31_60'=> 0, 'd61_90'=> 0, 'd91_120'=> 1, 'older'=>0, 'total'=>1];
+                                        array_push($modelcount, $pushtobe);
+                                    elseif($days_in_consignment>120):
+                                        $pushtobe=['referenceid'=>$modeloidchk,'name'=>$modelochk, 'd1_30'=> 0,'d31_60'=> 0, 'd61_90'=> 0, 'd91_120'=> 0, 'older'=>1, 'total'=>1];
+                                        array_push($modelcount, $pushtobe);
+                                endif;                                
+                        else:
+                                  if($days_in_consignment<=30):
+                                    $modelcount[$chkthesi]["d1_30"]++;
+                                    $modelcount[$chkthesi]["total"]++;
+                                  elseif($days_in_consignment>30 and $days_in_consignment<=60):
+                                    $modelcount[$chkthesi]["d31_60"]++;
+                                    $modelcount[$chkthesi]["total"]++;
+                                  elseif($days_in_consignment>60 and $days_in_consignment<=90):
+                                    $modelcount[$chkthesi]["d61_90"]++;
+                                    $modelcount[$chkthesi]["total"]++;
+                                  elseif($days_in_consignment>90 and $days_in_consignment<=120):
+                                    $modelcount[$chkthesi]["d91_120"]++;
+                                    $modelcount[$chkthesi]["total"]++;
+                                  elseif($days_in_consignment>120):
+                                    $modelcount[$chkthesi]["older"]++;
+                                    $modelcount[$chkthesi]["total"]++;
+                                  endif;
+                        endif;
+             
+            
+                
+                
+                
+                    
+                }
+                
+           
+                //return view('current_stock')->with('current_stock', $modelcount); 
+            return view('aged_consignement_models')->with('modelcount',$modelcount);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ public function fetch_aged_consign_model_cust(Request $request){
+           
+            $modelid = intval($request->modelid);
+            $periodclass = intval($request->periodclass);
+            $now = date('y:m:d');
+
+            switch ($periodclass) {
+                case 1:
+                    $datemin = date('Y-m-d', strtotime($now. ' - 30 days'));
+                    $datemax = date('Y-m-d', strtotime($now. ' - 0 days'));
+                  break;
+                case "31":
+                    $datemin = date('Y-m-d', strtotime($now. ' - 60 days'));
+                    $datemax = date('Y-m-d', strtotime($now. ' - 31 days'));
+                  break;
+                case "61":
+                    $datemin = date('Y-m-d', strtotime($now. ' - 90 days'));
+                    $datemax = date('Y-m-d', strtotime($now. ' - 61 days'));
+                  break;
+                  case "91":
+                    $datemin = date('Y-m-d', strtotime($now. ' - 120 days'));
+                    $datemax = date('Y-m-d', strtotime($now. ' - 91 days'));
+                    break;
+                    case "121":
+                        $datemin = date('Y-m-d', strtotime($now. ' - 8000 days'));
+                        $datemax = date('Y-m-d', strtotime($now. ' - 121 days'));
+                    break;
+                default:
+                         $datemin = date('Y-m-d', strtotime($now. ' - 8000 days'));
+                         $datemax = date('Y-m-d', strtotime($now. ' - 0 days'));
+              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            $url = self::URL; 
+            $db = self::DB;
+            $username = Config('configva.odoo.user');//einai ston config folder
+            $password = Config('configva.odoo.pass');//einai ston config folder
+         
+            $common = Ripcord::client("$url/xmlrpc/2/common");
+            $uid = $common->authenticate($db, $username, $password, array());
+            $models = Ripcord::client("$url/xmlrpc/2/object");
+           $query_arguments=array('&','&','&','&','&','&','&','&',array('location_id.usage','=','internal'),array('create_date','>=',$datemin),array('create_date','<=',$datemax),array(['location_id'][0],'!=',2075),array(['location_id'][0],'!=',2076),array(['location_id'][0],'!=',1975),array(['location_id'][0],'!=',8),array(['location_id'][0],'!=',9),array(['product_tmpl_id'][0],'=',$modelid),array('lot_id','!=',False));            $limitations=array('fields'=>array('product_tmpl_id','display_name','lot_id','location_id','create_date'));  // Array of wanted fields True, False
+            $uii=$models->execute_kw($db, $uid, $password,'stock.quant', 'search_read',array($query_arguments),$limitations);
+
+
+
+            return view('aged_consign_models_cust')->with('customers_list',$uii);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }

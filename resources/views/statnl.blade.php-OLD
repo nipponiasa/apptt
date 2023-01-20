@@ -1,0 +1,109 @@
+@extends('adminlte::page')
+@section('title', 'Apps - Trade And Traffic')
+@section('content_header')
+ <a href="{{ URL::previous() }}">Go Back</a>
+    <h1>Trade and Traffic Reservations</h1>
+@stop
+
+
+@section('plugins.Datatables', true)
+@section('content')
+                    <p>Welcome to Trade and Traffic Apps.</p>
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Brand</th>
+                                <th>Category</th>
+                                <th>Month</th>
+                                <th>Year</th>
+                                <th>Units</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                {{-------------------------------------------------------------------------------------------------------}}
+                @php
+                $records = App\Statnl::all();
+
+                foreach ($records as $record) {
+                  
+      
+                     
+                        echo '<tr> <td>'.$record->brand.'</td><td>'.$record->motocategory.'</td><td>'.$record->month.'</td><td>'.$record->year.'</td><td>'.$record->unitssold.'</td> </tr>';
+                    }
+                @endphp
+
+                {{-------------------------------------------------------------------------------------------------------}}
+                    
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                
+@stop
+
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+@stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {"displayLength": 25,
+        "footerCallback": function ( row, data, start, end, display ) {
+            var api = this.api(), data;
+ 
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
+            };
+ 
+            // Total over all pages
+            total = api
+                .column( 4 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Total over this page
+            pageTotal = api
+                .column( 4, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Update footer
+            $( api.column( 4 ).footer() ).html(
+                'Total:'+pageTotal +' ( '+ total +')'
+            );
+        }
+    } );
+} );
+
+
+</script>
+@stop
+
+
+
+
+
+
+
+
+
+
+

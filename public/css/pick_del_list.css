@@ -1,0 +1,66 @@
+.dataTables_filter{
+    display:none;
+    
+    }
+  #movielist_info
+  {display:none;}
+  
+  @media (max-width: 400px) {
+      .mikro {
+        width: 10px !important;
+      }
+    }
+  
+  
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+  
+   td{
+   
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    font-weight:300;
+    font-size:18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    color:#838566;
+  }
+  
+   a{
+  
+    color:#e9c200;
+  
+  }
+  
+  a:hover{
+  
+    color:#e0e0db;
+  
+  }
+  
+  
+  
+    
+  
+  .page-link 
+  {
+  
+    background:#343a40;
+  color:#838566;
+  }
+  
+  .paginate_button .page-item .active .primary_button li 
+  {
+  
+    background:#343a40!important;
+  
+  }
+  
+  .table-responsive .page-link 
+  {
+  background:#343a40!important;
+  border-color:white;
+  }
+  
+  
+   .active:hover .primary_button:hover .page-link:hover
+  {
+    border-color:white!important;
+  color:white!important;}
