@@ -184,8 +184,8 @@ $data['operationdescription']=$uii->pickingtype==="Delivery"?"Wij hebben zojuist
 
 //mail
 
-   //Mail::to('info@trade-traffic.com')->cc(['tzimplakisv@nipponia.com'])->send(new pickdelfinalize($data));
-   Mail::to('tzimplakisv@nipponia.com')->send(new pickdelfinalize($data));
+   Mail::to('info@trade-traffic.com')->cc(['tzimplakisv@nipponia.com'])->send(new pickdelfinalize($data));
+   //Mail::to('tzimplakisv@nipponia.com')->send(new pickdelfinalize($data));
     
     DB::table('pick_dels')
     ->where('id', $del_pickid)
