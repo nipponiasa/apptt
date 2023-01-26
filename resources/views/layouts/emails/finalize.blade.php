@@ -123,7 +123,7 @@
 <div class="" style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #393d47; line-height: 1.5;">
 <p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 24px;"><span style="font-size:16px;">Beste Dealer &nbsp;<u><strong>{{$maildata['dealername']}}</strong></u>,</span></p>
 <p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 21px;"> </p>
-<p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 24px;"><span style="font-size:16px;">{{$data['operationdescription']}} a motorcycle </span><span style="font-size:16px;">op {{$data['deliverydate']}} . </span><span style="font-size:16px;">Onderstaand treft u de gegevens aan:</span></p>
+<p style="margin: 0; font-size: 16px; text-align: left; mso-line-height-alt: 24px;"><span style="font-size:16px;">{{$data['operationdescription']}} </span><span style="font-size:16px;">op {{$data['deliverydate']}} . </span><span style="font-size:16px;">Onderstaand treft u de gegevens aan:</span></p>
 </div>
 </div>
 </td>
