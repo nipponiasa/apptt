@@ -145,7 +145,7 @@ public function mail_finalize(Request $request){
 //$uii=DB::table('pick_dels')->where('id', '=', $del_pickid)->get()[0];
 
 $dealerid=$uii->dealer;
-$dealeremail=$uii->dealeremail;
+$dealeremail=$uii->maila;
 $data=array("subjectcase"=>"");
 $data['subject']= "Confirmation of delivery";
 $data['dealername']= $this->fetch_dealer_name($dealerid);
@@ -168,7 +168,7 @@ $data['batterytype']= $uii->batterytype===1?"Yes":"No";
 $data['chargertested']= $uii->chargertested===1?"Yes":"No";
 $data['chargernbr']= $uii->chargernbr;
 $data['comments']= $uii->comments;
-
+//dd($dealeremail);
 
 
 $deliverydate=Carbon::now()->toDateTimeString();
@@ -184,7 +184,7 @@ $data['operationdescription']=$uii->pickingtype==="Delivery"?"Wij hebben zojuist
 
 //mail
 
-   Mail::to('info@trade-traffic.com')->cc(['tzimplakisv@nipponia.com'])->send(new pickdelfinalize($data));
+   Mail::to($dealeremail)->cc(['info@trade-traffic.com'])->send(new pickdelfinalize($data));
    //Mail::to('tzimplakisv@nipponia.com')->send(new pickdelfinalize($data));
     
     DB::table('pick_dels')
