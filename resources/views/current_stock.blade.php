@@ -19,6 +19,9 @@
     text-align: right;
 }
 </style>
+
+
+
 @stop
 
 
@@ -41,6 +44,7 @@ $config = [
        // 'columns' => [['orderable' => false], null, null, null, null, null , null ],
         'paging'=>   false,
         'searching'=>   true,
+        
         ];
        
 @endphp

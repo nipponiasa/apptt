@@ -30,7 +30,15 @@ foreach($uii as $result) {
 
   
 
-          echo '<tr> <td>'.$result['product_id'][1].'</td><td>'.$result['order_id'][1].'</td><td>'.$result['name'].'</td><td>'.$result['price_subtotal'].'</td><td>'.$result['x_invoice_line_total'].'</td><td>'.$result['invoice_status'].'</td><td>'.$result['create_date'].'</td></tr>'."\n";
+          echo '<tr> 
+            <td>'.$result['product_id'][1].'</td>
+            <td>'.$result['order_id'][1].'</td>
+            <td>'.$result['name'].'</td>
+            <td>'.$result['price_subtotal'].'</td>
+            <td>'.$result['x_invoice_line_total'].'</td>
+            <td>'.$result['invoice_status'].'</td>
+            <td>'.$result['create_date'].'</td>
+            </tr>'."\n";
           
 }
 @endphp

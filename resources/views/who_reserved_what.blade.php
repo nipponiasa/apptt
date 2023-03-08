@@ -23,11 +23,11 @@
                     <tbody>
                 {{-------------------------------------------------------------------------------------------------------}}
                 @php
-//var_dump($uii);
+// var_dump($uii);
 $total=0;
                         foreach($uii as $result)
                         {
-                            if(!is_bool($result['partner_id'])){
+                            if(isset($result['partner_id']) && !is_bool($result['partner_id'])){
                                 $total+=$result['product_uom_qty']; 
                         echo '<tr> <td>'.$result['product_id'][1].'</td><td>'.$result['product_uom_qty'].'</td><td>'.$result['partner_id'][1].'</td><td>'.$result['origin'].'</td><td>'.date('Y-m-d', strtotime($result['create_date'])).'</td></tr>';
                             }

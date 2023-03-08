@@ -340,6 +340,8 @@ foreach($uii as $result){
  //..........................................................................
 
         public function fetch_current_stock_model(Request $request){
+
+            //  Σημείωση Δημήτρη: από το Odoo φέρνει τα μοντέλα και τις ποσόστητες, αλλά από τη local βάση φέρνει τις τιμές
            
                 $catid = intval($request->catid);
                 $model = 'stock.quant';

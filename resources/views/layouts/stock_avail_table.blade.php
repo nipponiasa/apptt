@@ -2,7 +2,9 @@
                                            
 @php
                // $size = count($modelcount);
-                //var_dump($uii);
+                // var_dump($uii);
+                // echo '<pre>'; print_r($modelcount); echo '</pre>';
+                // echo '<pre>'; print_r($cost_per_cat); echo '</pre>';
                 $inWHWHL_total=0;
                $nonWH_total=0;
                $reserv_total=0;
@@ -17,6 +19,7 @@
                $nonWH=$result["nonWH"];
                $reserv=$result["reserv"];
                $demands=$result["demands"];
+               //   this is the last row (Total Cost): $cost_per_cat[$modelcountChild["cat_id"]]['cost']
                $cost_per_cat_single=array_key_exists($result["cat_id"],$cost_per_cat)?$cost_per_cat[$result["cat_id"]]['cost']:0;
                $nocostcount_single=array_key_exists($result["cat_id"],$cost_per_cat)?$cost_per_cat[$result["cat_id"]]['nocostcount']:0;
                $asterix_up=$nocostcount_single===0?'&nbsp;':'*';
