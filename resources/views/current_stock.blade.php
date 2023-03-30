@@ -42,7 +42,8 @@ $config = [
   ],
         'order' => [[0, 'asc']],
        // 'columns' => [['orderable' => false], null, null, null, null, null , null ],
-        'paging'=>   false,
+        'paging'=>   true,
+        'iDisplayLength' => 50,
         'searching'=>   true,
         
         ];
@@ -152,13 +153,16 @@ $config = [
 
 
 
-
+{{-- 
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
+--}}
+
 
 @section('js')
-<script src="{{ asset('js/va/cost_calc.js') }}"></script>
+{{-- <script src="{{ asset('js/va/cost_calc.js') }}"></script> --}}
+<script defer src="{{ asset('js/va/sumcalc.js') }}"></script>
 @stop
 

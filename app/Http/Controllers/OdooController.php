@@ -799,13 +799,17 @@ for ($i = 1; $i <= 12; $i++){
 
          
 
-
+            // get table sales_unit_target from DB
             $target_sales = DB::table('sales_unit_target') //pinakas me antistoixisi bi me odoo id edo den ginetai na ginei merge me ta targets
             ->where('month', '=', $month )
             ->where('year', '=', $year )
             ->get()->toArray();
 
+            //Get models table from Dababase to be used in models with no sales
+            $models_table = DB::table('models')->get()->toArray();
+            // print_r($models_table);
 
+            //Get sales from Odoo
             $sales_odoo_models_id=array();
 
 
@@ -878,11 +882,76 @@ foreach($uii as $result)
        //print_r($sales_odoo_models_id);
 
  }
+
+
+ // An associative arrray used with models with no sales
+ /*
+ $models_table = array(
+    "352"=>"Volty",
+    "372"=>"eRex",
+    "373"=>"eLegance",
+    "374"=>"Cit-E",
+    "375"=>"Drag-e",
+    "376"=>"eViball 1S",
+    "377"=>"F3",
+    "378"=>"F7",
+    "383"=>"Biq",
+    "388"=>"E3",
+    "389"=>"E4",
+    "392"=>"2Fast",
+    "393"=>"Pride",
+    "394"=>"Trimo",
+    "395"=>"iLark",
+    "396"=>"iTango",
+    "397"=>"iTank",
+    "403"=>"Scooty",
+    "442"=>"4Fast",
+    "446"=>"On-e",
+    "448"=>"eViball 2S",
+    "450"=>"Bring",
+    "455"=>"NC-e",
+ );
+*/
+
+
+
+
+    //add models with no sales, but with only target sales
+    foreach($target_sales as $result){
+        $categ_id1=$this->search_multidim($sales_odoo_models_id,'categ_id', $result->categ_id);
+        if ($categ_id1===false) //no sales for this model
+        {
+            $bi_name = $this->search_object($models_table, 'categ_id', $result->categ_id)->bi_model_name;
+            array_push($sales_odoo_models_id,
+            array(   
+                'categ_id' => $result->categ_id,
+                'bi_name' => $bi_name,
+                'target'=> $result->total_units_month,
+                'wholesale_price'=>  $result->wholesale_price,
+                'in_so'=>0,
+                'delivered'=>0,
+                'real_invoiced'=>0,
+                'untaxed_amount_invoiced'=>0,
+                'so_name'=> "",//$result['name'].",",
+                'percentage'=>0
+            ));   
+        }
+    }
+
+
   //dd($sales_odoo_models_id);
   $month_name= date('F', mktime(0, 0, 0, $month, 10)); 
   return  view('units_target')->with('sales_odoo_models_id', $sales_odoo_models_id)->with('selected_year', $year)->with('selected_month', $month)->with('selected_month_name', $month_name);
     
  }
+
+
+
+
+
+
+
+
 
   public function search_multidim($pinakas, $field, $value)
  {

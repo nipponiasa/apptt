@@ -19,8 +19,9 @@ $heads_motos = [ 'Model','Ordered',['label' => 'Delivered', 'no-export' => true]
 $config = [
         'order' => [[1, 'asc']],
         'columns' => [['orderable' => false,'visible'=> true, 'className' => 'text-center','width'=> '5%' ], ['className' => 'text-center wrap','width'=> '7%'], ['className' => 'text-center'], ['className' => 'text-center'], ['className' => 'text-center'] , ['className' => 'text-center']],
-        'paging'=>   false,
+        'paging'=>   true,
         'searching'=>   false,
+        'iDisplayLength' => 25,
         'info'=>   false,
         'scrollX'=> 400,
         ];
@@ -62,7 +63,7 @@ $selected_month_option=[$selected_month];
 
 
 
-
+ 
 @php
 
 //var_dump($uii);

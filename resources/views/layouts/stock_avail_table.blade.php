@@ -30,14 +30,33 @@
                $reserv_total+=$result["reserv"];
                $demands_total+=$result["demands"];
                $cost_total+=$cost_per_cat_single;
-               $total_price+=($inWHWHL+$nonWH+$reserv)*$list_price;
+            //    $total_price+=($inWHWHL+$nonWH+$reserv)*$list_price;      // old command
+               $total_price+=$total_price_per_model;
 
-                            echo '<tr> <td><a href=current_stock_model?catid='.$result["cat_id"].'>'.$result["category_name"].'</a></td><td>'.$inWHWHL.'</td><td>'. $nonWH.'</td><td  title='.substr_replace($result['originr'] ,"", -1).'   >'.$reserv.'</td><td  title='.substr_replace($result['origind'] ,"", -1).'   >'.$demands.'</td><td>'.number_format($list_price, 2, '.', ',').' €</td><td>'.number_format($total_price_per_model, 2, '.', ',').' €</td><td  style="white-space:nowrap;" title='.$nocostcount_single.' >'.number_format($cost_per_cat_single, 2, '.', ',').' €'.$asterix_up.'</td></tr>';
-                        }
+               echo '<tr> 
+                    <td><a href=current_stock_model?catid='.$result["cat_id"].'>'.$result["category_name"].'</a></td>
+                    <td data-col="inWHWHL">'.$inWHWHL.'</td>
+                    <td data-col="nonWH">'. $nonWH.'</td>
+                    <td data-col="reserv" title='.substr_replace($result['originr'] ,"", -1).'   >'.$reserv.'</td>
+                    <td data-col="demands" title='.substr_replace($result['origind'] ,"", -1).'   >'.$demands.'</td>
+                    <td >'.number_format($list_price, 2, '.', ',').' €</td>
+                    <td data-col="total_price_per_model">'.number_format($total_price_per_model, 2, '.', ',').' €</td>
+                    <td style="white-space:nowrap;" data-col="nocostcount_single" title='.$nocostcount_single.' >'.number_format($cost_per_cat_single, 2, '.', ',').' €'.$asterix_up.'</td>
+                </tr>';
+            }
 
-                        
-                        echo '<tfoot> <td>Totals</td><td>'.$inWHWHL_total.'</td><td>'. $nonWH_total.'</td><td>'.$reserv_total.'</td><td>'.$demands_total.'</td><td></td><td>'.number_format($total_price, 2, '.', ',').' € </td><td>'.number_format($cost_total, 2, '.', ',').' € </td></tfoot>';
-                @endphp
+            
+            echo '<tfoot class="font-weight-bold"> 
+                <td>Totals</td>
+                <td data-sum="inWHWHL">'.$inWHWHL_total.'</td>
+                <td data-sum="nonWH">'. $nonWH_total.'</td>
+                <td data-sum="reserv">'.$reserv_total.'</td>
+                <td data-sum="demands">'.$demands_total.'</td>
+                <td></td>
+                <td data-sum="total_price_per_model" data-format="€">'.number_format($total_price, 2, '.', ',').' € </td>
+                <td data-sum="nocostcount_single" data-format="€">'.number_format($cost_total, 2, '.', ',').' € </td>
+            </tfoot>';
+    @endphp
 
 
 
