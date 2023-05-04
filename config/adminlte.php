@@ -528,22 +528,22 @@ return [
 
         ],
 
-        ['header' => 'account_settings',
-        'can' => 'isManager' ,  
-    ],
+        // ['header' => 'account_settings',
+        //     'can' => 'isManager' ,  
+        // ],
 
-        [
+        // [
 
-            'text' => 'profile',
+        //     'text' => 'profile',
 
-            'url'  => 'user_profile_edit',
+        //     'url'  => 'user_profile_edit',
 
-            'icon' => 'fas fa-fw fa-user',
+        //     'icon' => 'fas fa-fw fa-user',
 
-            'can' => 'isManager' ,  
+        //     'can' => 'isManager' ,  
             
 
-        ],
+        // ],
 
 
    
@@ -553,19 +553,21 @@ return [
 
         ],
 
-        [
+        // [
         
-             'text'    => 'User Management',
+        //      'text'    => 'User Management',
         
-             'icon'    => 'fas fa-users-cog',
+        //      'icon'    => 'fas fa-users-cog',
 
-             'can' => 'isAdmin'  ,
+        //      'can' => 'isAdmin'  ,
         
-             'submenu' => [
+        //      'submenu' => [
         
                  [
         
                      'text' => 'All Users',
+
+                     'icon'    => 'fas fa-users-cog',
         
                      'url'  => 'user_list',
 
@@ -575,9 +577,9 @@ return [
         
                
         
-             ],
+            //  ],
         
-         ], 
+        //  ], 
 
 
 
@@ -590,7 +592,7 @@ return [
      
       
 
-        ['header' => 'Check for..',
+        ['header' => 'CHECK FOR',
         'can' => 'isManager' ,  
     ],
         
@@ -710,7 +712,7 @@ return [
 
 
 
-        ['header' => 'Reports..',
+        ['header' => 'REPORTS',
         'can' => 'isManager' ,  
     ],
 
@@ -861,7 +863,7 @@ return [
 
 
 
-['header' => 'Helpers',
+['header' => 'HELPERS',
 'can' => 'isManager' ,  
 ],
 
@@ -902,7 +904,7 @@ return [
 
 
 
- ['header' => 'Forms',
+ ['header' => 'FORMS',
  
 ],
 
@@ -976,7 +978,7 @@ return [
 
 
 
-        ['header' => 'Official Statistics',
+        ['header' => 'OFFICIAL STATISTICS',
         'can' => 'isManager' ,  
     ],
 
