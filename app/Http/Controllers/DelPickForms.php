@@ -44,6 +44,7 @@ public function del_pick_edit_show(Request $request){
     $dealers=$this->fetch_dealer_list();
     $uii=DB::table('pick_dels')->where('id', '=', $del_pickid)->get()[0];
     //dd($uii->imagesignurl);
+    // return json_encode($uii);
     $locations=$this->fetch_dealers_locations2($uii->dealer);
     //$signexists=file_exists($uii->id.".jpg");
     $signexists= !is_null($uii->imagesignurl);
@@ -300,7 +301,7 @@ $data['operationdescription']=$uii->pickingtype==="Delivery"?"Wij hebben zojuist
 public function fetch_details_vin(Request $request){
     $vin = $request->vin;
 //dd(  $vin);
-    $model = 'stock.production.lot';
+    $model = 'stock.lot';
     $query_arguments=array(array('name','=',$vin));
     $limitations=array('fields'=>array('product_id'));
     $call=new Odoocall();

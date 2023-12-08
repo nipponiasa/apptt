@@ -1,9 +1,9 @@
   function get_vin_det()
   {
-
            var vin=$("#vin").val();
            $.get('/forms/del_pick/details_vin', {vin: vin}, function (product_det, textStatus, jqXHR) {
             //alert('vin');
+                // console.log(product_det);
                               if(product_det.product_det_return.length===0)
                               {
                                 $("#model").val("This VIN does not exist");

@@ -545,11 +545,17 @@ return  array_unique($consignment_locations);
             $dateto =  $initdate->addYear(1)->format('Y-m-d');
 
 
-            
-            $query_arguments=array('&', '&', '|',array('type', '=', 'out_invoice'),array('type', '=', 'out_refund'), array('invoice_date','>=',$datefrom), array('invoice_date','<',$dateto));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
-            $limitations=array('fields'=>array( 'amount_untaxed_signed','invoice_date'));  // Array of wanted fields True, False   
+            // $query_arguments=array('&', '&', '|',array('type', '=', 'out_invoice'),array('type', '=', 'out_refund'), array('invoice_date','>=',$datefrom), array('invoice_date','<',$dateto));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            $query_arguments=array('&', array('invoice_date','>=',$datefrom), array('invoice_date','<',$dateto));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+            $limitations=array('fields'=>array( 'type_name','amount_untaxed_signed','invoice_date'));  // Array of wanted fields True, False   
             $uii=$models->execute_kw($db, $uid, $password, 'account.move', 'search_read', array($query_arguments),$limitations);//telos execute_kw
       
+            $uii = array_filter($uii, function($element) {
+                return $element['type_name'] == 'Invoice' || $element['type_name'] == 'Credit Note';
+            });
+            // return $uii;
+
+            
             $total=0;
             $totalpermonth[1]=0;
             $totalpermonth[2]=0;
@@ -568,11 +574,11 @@ return  array_unique($consignment_locations);
 
             $totalrevenueall=0;
 
-
+                
                 foreach ($uii as $ammount) {
-$invoicedmonth=Carbon::createFromFormat('Y-m-d', $ammount['invoice_date'])->month;
-$total=$ammount['amount_untaxed_signed'];
-$totalrevenueall+=$total;
+                    $invoicedmonth=Carbon::createFromFormat('Y-m-d', $ammount['invoice_date'])->month;
+                    $total=$ammount['amount_untaxed_signed'];
+                    $totalrevenueall+=$total;
 
 
                     switch ($invoicedmonth) {
@@ -614,7 +620,7 @@ $totalrevenueall+=$total;
                          break;                      
                             }
                 }
-  
+
 
 $revenue= $totalpermonth;
 
@@ -1820,6 +1826,7 @@ $limitations=array('fields'=>array('product_uom_qty','x_product_category','origi
 $call=new Odoocall();
 $uii=$call->Odooquery($model,$query_arguments,$limitations);
 
+
 foreach($uii as $result){
     //$category_id=$result['x_product_category'][0];
     $category_name=$this->product_category_to_last_child($result['x_product_category'][1]);
@@ -1876,7 +1883,7 @@ foreach($uii as $result){
 
 
 
-
+// return $uii;
 
 //forecasted quantity
 $model = 'stock.move';
@@ -1885,19 +1892,23 @@ $nowdatetime =  date("Y-m-d h:i:sa");
 
 
 //$query_arguments=array('&' ,'&' ,array('picking_code','=','incoming ), array('state','in',array('assigned','partially_available')),array('product_tmpl_id.tracking','=','serial'));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ]         
-$query_arguments=array('&' ,'&','&','&',array('date_expected','>',$nowdatetime),array('picking_code','=','incoming'), array('product_tmpl_id.tracking','=','serial'),array(['x_product_category'][0],'=', $categid),array('origin','!=', false));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
-$limitations=array('fields'=>array('product_uom_qty','x_product_category','origin','product_id','date_expected','product_qty'));
+$query_arguments=array('&','&','&','&','&','&',array('x_scheduled_date','>',$nowdatetime),array('picking_code','=','incoming'), array('product_tmpl_id.tracking','=','serial'),array(['x_product_category'][0],'=', $categid),array('origin','!=', false),array('state','!=', 'draft'),array('state','!=', 'cancel'));// Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
+$limitations=array('fields'=>array('product_uom_qty','state','x_product_category','origin','product_id','x_scheduled_date','product_qty'));
 $call=new Odoocall();
 $uii=$call->Odooquery($model,$query_arguments,$limitations);
+
+// return $uii;
+
 //dd($uii);
 //print_r($uii);
 
 foreach($uii as $result){
-    //$category_id=$result['x_product_category'][0];
+    // return $result;
+    // $category_id=$result['x_product_category'][0];
     $category_name=$this->product_category_to_last_child($result['x_product_category'][1]);
     $product_id=$result['product_id'][0];//$result['product_id'][0];
     $product_description=$result['product_id'][1];
-    $date_expected=Carbon::createFromFormat('Y-m-d H:i:s', $result['date_expected'])->addWeeks(1);
+    $date_expected=Carbon::createFromFormat('Y-m-d H:i:s', $result['x_scheduled_date'])->addWeeks(1);
     $date_expected =  $date_expected->format('Y-m-d');
     $product_description=str_replace("(EURO 5) ","",$product_description);
     //$product_description=str_replace("(no battery)","no battery",$product_description);

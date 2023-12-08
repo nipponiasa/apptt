@@ -18,6 +18,8 @@
     </thead>
 
 @php
+//dd($modelcount);
+        //
 ////////////////*****************************WH stock is total whl + wh */
         foreach($modelcount as $result) 
         {
