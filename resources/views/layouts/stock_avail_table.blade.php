@@ -12,18 +12,22 @@
                $cost_total=0;
                $total_price=0;
 
+            //    dd($cost_per_cat);
+                // dd($modelcount);
 
-                foreach($modelcount as $result) {
-
+        foreach($modelcount as $result) {
+            
                $inWHWHL=$result["WH"];
                $nonWH=$result["nonWH"];
                $reserv=$result["reserv"];
                $demands=$result["demands"];
                //   this is the last row (Total Cost): $cost_per_cat[$modelcountChild["cat_id"]]['cost']
                $cost_per_cat_single=array_key_exists($result["cat_id"],$cost_per_cat)?$cost_per_cat[$result["cat_id"]]['cost']:0;
+            //    echo '<p>'. $result["category_name"] . ' ' . $cost_per_cat_single . '</p>';
+            //    echo '<p>'. $result["category_name"] . ' ' . $result["cat_id"] . '</p>';
                $nocostcount_single=array_key_exists($result["cat_id"],$cost_per_cat)?$cost_per_cat[$result["cat_id"]]['nocostcount']:0;
                $asterix_up=$nocostcount_single===0?'&nbsp;':'*';
-               $list_price=$result["list_price"]*0.75;
+               $list_price=($result["list_price"]??0)*0.75;
                $total_price_per_model=($inWHWHL+$nonWH)*$list_price;
                $inWHWHL_total+=$result["WH"];
                $nonWH_total+=$result["nonWH"];
@@ -43,7 +47,7 @@
                     <td data-col="total_price_per_model">'.number_format($total_price_per_model, 2, '.', ',').' €</td>
                     <td style="white-space:nowrap;" data-col="nocostcount_single" title='.$nocostcount_single.' >'.number_format($cost_per_cat_single, 2, '.', ',').' €'.$asterix_up.'</td>
                 </tr>';
-            }
+        }
 
             
             echo '<tfoot class="font-weight-bold"> 

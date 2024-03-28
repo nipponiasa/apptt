@@ -129,7 +129,7 @@
         <!--  href="{{ URL::to('/forms/del_pick/pdf') }}" -->
 
    </div>
-
+</div>
 
 
 

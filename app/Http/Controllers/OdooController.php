@@ -95,7 +95,7 @@ return  $file;
 
     public function fetch_current_stock()
         {
-            $this->update_vin_stock_table();
+            $this->update_vin_stock_table();        // fetches data from odoo and updates DB table 
             $model = 'stock.quant';
             //$query_arguments=array('&','&','&','&','&','&','&','&',	array('product_tmpl_id.categ_id','ilike', 'Motorcycles'), array('tracking', '=', 'serial'),array(['location_id'][0],'!=',15),array(['location_id'][0],'!=',762),array(['location_id'][0],'!=',13),array(['location_id'][0],'!=',16),array(['location_id'][0],'!=',2013),array(['location_id'][0],'!=',5),array(['location_id'][0],'!=',4),array(['location_id'][0],'!=',14)); // Check polish notation in Odoo ( A or B ) AND ( C or D or E )  ginetai [ '&', '|', (A), (B), '|', (C), '|', (D), (E) ] 
             $query_arguments=array('&','&','&','&','&','&','&','&','&','&','&',
@@ -114,7 +114,7 @@ return  $file;
             $limitations=array('fields'=>array('location_id','product_id','inventory_quantity','quantity','reserved_quantity','product_tmpl_id','x_product_category','x_list_price')) ;
             $call=new Odoocall();
             $uii=$call->Odooquery($model,$query_arguments ,$limitations);
-//print_r($uii);
+            // return $uii;
             //$uii=$call->Odooquery($model,$query_arguments);
             //15->Production
             //2075 -> Mol
@@ -134,16 +134,16 @@ return  $file;
 
             //print_r($uii);
 
-//dd( $uii);
+// dd( $uii);
 
-         
+            // return $uii;
             $modelcount = array();
             foreach($uii as $result)
            {
 
 
-            $category_full_name=$result['x_product_category'][1];
-            $category_id=$result['x_product_category'][0];
+            $category_full_name=$result['x_product_category'][1]??'';
+            $category_id=$result['x_product_category'][0]??'';
             $category_name_potition=strrpos($category_full_name," / ")+3;
             $category_name=substr($category_full_name,$category_name_potition);
 
@@ -202,8 +202,10 @@ return  $file;
                     endif;
            endif;
              }
-//dd($modelcount);
-//change array to category friendly array
+
+            // dd($modelcount);
+            // return $modelcount;
+            //change array to category friendly array
              $modelcountnew = array();
              foreach($modelcount as $model2){
 
@@ -236,6 +238,7 @@ return  $file;
 
             
              //dd($modelcountnew);
+            //  return $modelcountnew;
 
 
 //change array to category friendly array
@@ -332,7 +335,7 @@ foreach($uii as $result){
 //cost
 
 
-
+        // return $modelcountnew;
 
         return view('current_stock')->with('modelcount',$modelcountnew)->with('uii', $uii)->with('cost_per_cat', $cost_per_cat);
         }
@@ -2673,20 +2676,25 @@ public function fetch_custom_odoo_model(){
         DB::table('vins_in_stocks')->delete();    
         $model = 'stock.quant';
         $limitations=array('fields'=>array('lot_id'));  // Array of wanted fields True, False   
-        $query_arguments=array('&','&','&','&','&','&','&','&','&','&','&','&',
-        array('reserved_quantity','!=',1),
-        array(['location_id'][0],'!=',15),
-        array('tracking', '=', 'serial'),
-        array('lot_id','!=',false),
-        array(['location_id'][0],'!=',13),
-        array(['location_id'][0],'!=',762),
-        array(['location_id'][0],'!=',16),
-        array(['location_id'][0],'!=',2013),
-        array(['location_id'][0],'!=',5),
-        array(['location_id'][0],'!=',4),
-        array(['location_id'][0],'!=',9),
-        array(['location_id'][0],'!=',2975),
-        array(['location_id'][0],'!=',14));
+        $query_arguments=array('&','&','&','&','&','&','&','&','&','&','&','&','&','&','&','&',
+            array('reserved_quantity','!=',1),
+            array('inventory_quantity_auto_apply','!=',0),
+            array(['location_id'][0],'!=',15),
+            array('tracking', '=', 'serial'),
+            array('lot_id','!=',false),
+            array(['location_id'][0],'!=',13),
+            array(['location_id'][0],'!=',762),
+            array(['location_id'][0],'!=',16),
+            array(['location_id'][0],'!=',2013),
+            array(['location_id'][0],'!=',5),
+            array(['location_id'][0],'!=',4),
+            array(['location_id'][0],'!=',9),
+            array(['location_id'][0],'!=',2076),
+            array(['location_id'][0],'!=',2975),
+            array(['location_id'][0],'!=',14),
+            array('product_tmpl_id.categ_id','not like', 'Samples'),
+            array('product_tmpl_id.categ_id','not like', 'Batteries'),
+        );
         $call=new Odoocall();
         $uii=$call->Odooquery($model,$query_arguments ,$limitations);
         $datavins = [];
