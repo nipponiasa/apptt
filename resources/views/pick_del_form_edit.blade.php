@@ -34,20 +34,20 @@
 {{--   signature --}}
 
 @section('content_header')
-
-<div class="container">
+<!-- class="container" style="max-width:80%"-->
+<div >
 
     <form id="pickdelform" action="{{url('/del_pick_edit')}}" method="post" >
     <input id="pickdelid" name="pickdelid" type="hidden" value="{{$uii->id}}">
     <input id="signaturesvg" name="signaturesvg" type="hidden" value="">
-    <div class="row leftspace">
+    <div class="row"> <!-- leftspace -->
 
-       <div class="col-md-3 mb-3" >
+       <div class="col-md-4 mb-3" >
             <h1>Delivery-Pick Form</h1>
       </div>
 
 
-        <div class="col-md-1 mb-3">
+        <div class="col-md-2 mb-3">
                     <div class="form-group">
                           <select id="pickingtype" name="pickingtype" class="form-control"  aria-label="Default select example">
                             <option value="Choose Type.." {{$uii->pickingtype=="Choose Type.."  ? 'selected' : ''}}>Type..</option>
@@ -60,7 +60,7 @@
 
 
 
-        <div class="col-md-1 mb-3">
+        <div class="col-md-2 mb-3">
                     <div class="form-group">
                           <select id="operationtype" name="operationtype" class="form-control"  aria-label="Default select example">
                             <option value="Choose Operation.." {{$uii->operationtype==" Selecteer een Operation.."  ? 'selected' : ''}}>Operation..</option>
@@ -73,7 +73,7 @@
         </div>
 
 
-        <div class="col-md-1 mb-3">
+        <div class="col-md-2 mb-3">
                     <div class="form-group">
                           <select id="routingnbr" name="routingnbr" class="form-control"  aria-label="Default select example">
                             <option value="Routing.." {{$uii->routingnbr=="Route.."  ? 'selected' : ''}}>Route..</option>
@@ -102,33 +102,31 @@
 
 
 
+    </div>
 
 
 
 
-        <div class="col-md-1 mb-2">
-           <button type="submit" class="btn btn-primary">Update</button>
+        <div class="text-center ">
+           <button type="submit" class="btn btn-primary m-1">Update</button>
+           <a class="btn btn-warning m-1" id="finalize" href="#">Afronden</a>
+           <a class="btn btn-danger m-1" id="cancel" href="#">Annuleer</a>
+           <a class="btn btn-default m-1" id="refused" href="#">Geweigerd</a>
+           <button class="btn btn-info m-1" type="button" id="duplicate" href="#">Duplicate</button>
         </div>
 
-        <div class="col-md-1 mb-2">
-                <a class="btn btn-warning" id="finalize" href="#">Afronden</a>
+        <div class="d-none" id="duplicate-spinner">
+            <div class="d-flex flex-column align-items-center m-4" >
+                    <div class="spinner-border text-primary m-2" role="status">
+                    </div>
+                    <div>Duplicating and redirecting to new...</div>
+            </div>
         </div>
-      
-
-        <div class="col-md-1 mb-2">
-        <a class="btn btn-danger" id="cancel" href="#">Annuleer</a>
-        </div>
-
-        <div class="col-md-1 mb-2">
-                <a class="btn btn-default" id="refused" href="#">Geweigerd</a>
-        </div>
-
 
 
 
         <!--  href="{{ URL::to('/forms/del_pick/pdf') }}" -->
 
-   </div>
 </div>
 
 

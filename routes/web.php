@@ -133,7 +133,7 @@ Route::post('/bi/sales_targets_input', 'SalesForecast@sales_targets_edit')->name
 Route::get('/current_stock/get_cost_per_cat', 'OdooController@fetch_cost_per_cat')->name('fetch_cost_per_cat')->middleware('auth');
 //ajax routes
 
-//Forms
+//Del Pick
 Route::get('/del_pick', 'DelPickForms@del_pick_show')->name('del_pick_show')->middleware('auth');
 Route::post('/del_pick', 'DelPickForms@del_pick_create')->name('del_pick_create')->middleware('auth');
 Route::get('/forms/del_pick/pdf', 'DelPickForms@del_pick_create_pdf')->name('del_pick_create_pdf')->middleware('auth');
@@ -141,6 +141,7 @@ Route::get('/del_pick_list', 'DelPickForms@del_pick_list_show')->name('del_pick_
 Route::get('/del_pick_finished_list', 'DelPickForms@del_pick_show_finished')->name('del_pick_finished_list')->middleware('auth');
 Route::get('/del_pick_edit', 'DelPickForms@del_pick_edit_show')->name('del_pick_edit_show')->middleware('auth');
 Route::post('/del_pick_edit', 'DelPickForms@del_pick_update')->name('del_pick_update')->middleware('auth');
+Route::post('/del_pick_edit/duplicate', 'DelPickForms@del_pick_duplicate')->name('del_pick_duplicate')->middleware('auth');
 
 
 //Forms

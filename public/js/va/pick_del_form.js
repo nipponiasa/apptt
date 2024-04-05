@@ -208,4 +208,31 @@ function validateoptions() {
 
   });
 
+  $('#duplicate').on('click', function() {
+    var pickdelid=$("#pickdelid").val();
+    //confirm
+    if (!confirm("Duplicate this record?")){return false};
+
+    $('.content').hide();
+    $('#duplicate-spinner').removeClass('d-none');
+
+    // post data to server
+    fetch('/del_pick_edit/duplicate', {
+      method: 'POST',
+      redirect: "follow",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({pickdelid: pickdelid}),
+    }).then((response) => {
+      if (!response.ok) {
+        // handle the error
+        alert('Error: ' + response.statusText);
+      } else if (response.redirected) {
+        // redirect to the new delpick
+        window.location.href = response.url;
+      }
+    });
+
+  });
 

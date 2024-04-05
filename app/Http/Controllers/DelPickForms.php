@@ -575,7 +575,156 @@ DB::table('pick_dels')
     
     
     
+public function del_pick_duplicate(Request $request){
+    $pickdelid=$request->pickdelid;
+    $uii=DB::table('pick_dels')->where('id', '=', $pickdelid)->get()[0];
+    //dd($uii);
+
+    $pickingtype=$uii->pickingtype;
+    $operationtype=$uii->operationtype;
+    $vin=$uii->vin;
+    $model=$uii->model;
+    $modeldet=$uii->modeldet;
+    $licencenbr=$uii->licencenbr;
+    $dealer=$uii->dealer;
+    $dealerloc=$uii->dealerloc;
+    $address=$uii->address;
+    $phone=$uii->phone;
+    $maila=$uii->maila;
+    $vehicleworks=$uii->vehicleworks;
+    $keyspresent=$uii->keyspresent;
+    $remotepresent=$uii->remotepresent;
+    $toolkitpresent=$uii->toolkitpresent;
+    $vinplatematch=$uii->vinplatematch;
+    $casespresent=$uii->casespresent;
+    $mirrorspresent=$uii->mirrorspresent;
+    $batterypresent=$uii->batterypresent;
+    $chargerpresent=$uii->chargerpresent;
+    $chargertested=$uii->chargertested;
+    $damage=$uii->damage;
+    $batterynbr=$uii->batterynbr;
+    $batterytype=$uii->batterytype;
+    $chargernbr=$uii->chargernbr;
+    $comments=$uii->comments;
+    $notesint=$uii->notesint;
+    $created_by=auth()->user()->id;     // this user
+    $routingnbr=$uii->routingnbr;
+    $routingdate=$uii->routingdate;
+    $imagesignurl=$uii->imagesignurl;
+    //dd($imagesignurl);
+
+
+
+    $newId=DB::insert('insert into pick_dels  
+    (
+     pickingtype,
+     operationtype,
+     vin,
+     model,
+     modeldet,
+     licencenbr,
+     dealer,
+     dealerloc,
+     address,
+     phone,
+     maila,
+     vehicleworks,
+     keyspresent,
+     remotepresent,
+     toolkitpresent,
+     vinplatematch,
+     casespresent,
+     mirrorspresent,
+     batterypresent,
+     chargertested,
+     damage,
+     chargerpresent,
+     batterynbr,
+     batterytype,
+     chargernbr,
+     comments,
+     notesint,
+     created_by,
+     routingnbr,
+     routingdate
+
+       ) values
+    (?,?,?,?,?,
+    ?,?,?,?,?,
+    ?,?,?,?,?,
+    ?,?,?,?,?,
+    ?,?,?,?,?,?,
+    ?,?,?,?
+    )', 
+    [''.
+     $pickingtype
+     .'', ''.
+     $operationtype
+     .'',''. 
+     $vin
+     .'', ''. 
+     $model
+     .'',''.
+     $modeldet
+     .'',''.
+     $licencenbr
+     .'',''.
+     $dealer
+     .'', ''.
+     $dealerloc
+     .'', ''.
+     $address
+     .'',''. 
+     $phone
+     .'', ''. 
+     $maila
+     .'', ''. 
+     $vehicleworks
+     .'',''.
+     $keyspresent
+     .'', ''.
+     $remotepresent
+     .'',''. 
+     $toolkitpresent
+     .'', ''. 
+     $vinplatematch
+     .'',''.
+     $casespresent
+     .'', ''.
+     $mirrorspresent
+     .'',''. 
+     $batterypresent
+     .'', ''. 
+     $chargerpresent
+     .'',''.
+     $damage
+     .'',''.
+     $chargertested
+     .'',''.
+     $batterynbr
+     .'',''. 
+     $batterytype
+     .'', ''. 
+     $chargernbr
+     .'', ''. 
+     $comments
+     .'',''.
+     $notesint
+     .'',''.
+     $created_by
+     .'', ''. 
+     $routingnbr
+     .'',''.
+     $routingdate
+    ]);
     
+    $newId=DB::table('pick_dels')->max('id');
+    $newId=intval($newId);
+
+    return redirect('/del_pick_edit?id='.$newId);
+
+}
+
 
 
 
