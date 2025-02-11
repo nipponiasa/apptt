@@ -105,7 +105,7 @@
                                                     <td style="text-align: right;">Total:</td>
                                                             <td style="text-align: right;">@php echo number_format($totalrevenueall,2); @endphp</td>
                                                             <td style="text-align: right;">@php echo number_format($totaltargetall,2); @endphp</td>
-                                                        <td style="text-align: right;">@php echo number_format(100*($totalrevenueall-$totaltargetall)/$totaltargetall,2) ."%"; @endphp</td>   
+                                                        <td style="text-align: right;">@php echo $totaltargetall != 0 ? number_format(100 * ($totalrevenueall - $totaltargetall) / $totaltargetall, 2) . "%" : "N/A"; @endphp</td>   
                                                        
                                                     </tr>
 

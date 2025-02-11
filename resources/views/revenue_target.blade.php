@@ -56,7 +56,7 @@ $config = [
 
 
 <x-adminlte-select name="year">
-    <x-adminlte-options :options="[ '2021'=>2021, '2022'=>2022, '2023'=>2023, '2024'=>2024]"  empty-option="Select year..."/>
+    <x-adminlte-options :options="[ '2025'=>2025, '2024'=>2024, '2023'=>2023, '2022'=>2022, '2021'=>2021 ]"  empty-option="Select year..."/>
     <option selected>{{$selected_year}}</option>
 </x-adminlte-select>
 

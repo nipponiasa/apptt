@@ -47,7 +47,7 @@ $selected_month_option=[$selected_month];
               <div class="row">
                           <div class="col-md-3">   
                                     <x-adminlte-select name="year">
-                                              <x-adminlte-options :options="[ '2021'=>2021, '2022'=>2022, '2023'=>2023, '2024'=>2024]" :selected="$selected_year_option" />
+                                              <x-adminlte-options :options="[ '2025'=>2025, '2024'=>2024, '2023'=>2023, '2022'=>2022, '2021'=>2021, ]" :selected="$selected_year_option" />
                                     </x-adminlte-select>
                           </div>
                                   <div class="col-md-3">   
